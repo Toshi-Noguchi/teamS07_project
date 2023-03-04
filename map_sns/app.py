@@ -1,11 +1,15 @@
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 
 
 app = Flask(__name__)
 #データベースの設計
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///map.db'
-db = SQLAlchemy(app)
+def get_db():
+    if 'db' not in g:
+        g.db = sqlite3.connect('mapSNS.db')
+    
+    return g.db
+
 
 
 class Users(db.Model):
