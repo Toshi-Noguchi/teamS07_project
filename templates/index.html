@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>ログイン画面</h1>
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label for="">ユーザ名</label>
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <label for="">パスワード</label>
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">ログイン</button>
+    </form>
+{% endblock %}
